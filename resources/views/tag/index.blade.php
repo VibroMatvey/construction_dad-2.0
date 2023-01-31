@@ -5,10 +5,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Опции</h1>
+                    <h1 class="m-0">Тэги</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
-                    <a href="{{ route('options.create') }}" class="float-right">
+                    <a href="{{ route('tag.create') }}" class="float-right">
                         <button class="btn btn-success"><i class="fas fa-plus"></i></button>
                     </a>
                 </div><!-- /.col -->
@@ -26,24 +26,20 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
-                                    <th>Значение</th>
-                                    <th>Цена</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($options as $option)
+                                    @foreach($tags as $tag)
                                         <tr>
-                                            <td>{{ $option->id }}</td>
-                                            <td><a href="{{route('options.show', $option->id)}}">{{ $option->title }}</a></td>
-                                            <td>{{ $option->value }}</td>
-                                            <td>{{ $option->price }}</td>
+                                            <td>{{ $tag->id }}</td>
+                                            <td><a href="{{route('tag.show', $tag->id)}}">{{ $tag->title }}</a></td>
                                             <td class="d-flex">
-                                                <a href="{{route('options.edit', $option->id)}}">
+                                                <a href="{{route('tag.edit', $tag->id)}}">
                                                     <button class="btn btn-primary">
                                                         <i class="fas fa-pen"></i>
                                                     </button>
                                                 </a>
-                                                <form action="{{route('options.delete', $option->id)}}" method="POST" class="ml-2">
+                                                <form action="{{route('tag.delete', $tag->id)}}" method="POST" class="ml-2">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger">
@@ -56,7 +52,6 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -5,10 +5,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Опции</h1>
+                    <h1 class="m-0">Пользователи</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
-                    <a href="{{ route('options.create') }}" class="float-right">
+                    <a href="{{ route('user.create') }}" class="float-right">
                         <button class="btn btn-success"><i class="fas fa-plus"></i></button>
                     </a>
                 </div><!-- /.col -->
@@ -25,25 +25,33 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Наименование</th>
-                                    <th>Значение</th>
-                                    <th>Цена</th>
+                                    <th>Имя</th>
+                                    <th>Фамилия</th>
+                                    <th>Отчество</th>
+                                    <th>Возраст</th>
+                                    <th>Пол</th>
+                                    <th>Эл. почта</th>
+                                    <th>Адрес</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($options as $option)
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td>{{ $option->id }}</td>
-                                            <td><a href="{{route('options.show', $option->id)}}">{{ $option->title }}</a></td>
-                                            <td>{{ $option->value }}</td>
-                                            <td>{{ $option->price }}</td>
+                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $user->surname }}</td>
+                                            <td><a href="{{route('user.show', $user->id)}}">{{ $user->name }}</a></td>
+                                            <td>{{ $user->lastname }}</td>
+                                            <td>{{ $user->age }}</td>
+                                            <td>{{ $user->genderTitle }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->address }}</td>
                                             <td class="d-flex">
-                                                <a href="{{route('options.edit', $option->id)}}">
+                                                <a href="{{route('user.edit', $user->id)}}">
                                                     <button class="btn btn-primary">
                                                         <i class="fas fa-pen"></i>
                                                     </button>
                                                 </a>
-                                                <form action="{{route('options.delete', $option->id)}}" method="POST" class="ml-2">
+                                                <form action="{{route('user.delete', $user->id)}}" method="POST" class="ml-2">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger">
@@ -56,7 +64,6 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

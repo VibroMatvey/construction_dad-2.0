@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Редактировать опцию</h1>
+                    <h1 class="m-0">Редактировать тэг</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -20,22 +20,13 @@
             <div class="row">
                 <div class="card col-3 mx-auto mt-2">
                     <div class="card-body">
-                        <form action="{{route('options.update', $option->id)}}" method="POST">
+                        <form action="{{route('tag.update', $tag->id)}}" method="POST">
                             @method('patch')
                             @csrf
                             <div class="form-group">
                                 <label for="title">Наименование</label>
-                                <input name="title" type="text" value="{{$option->title}}" class="form-control"
+                                <input name="title" type="text" value="{{$tag->title}}" class="form-control"
                                        id="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="value">Значение</label>
-                                <input name="value" type="text"  value="{{$option->value}}" class="form-control" id="value">
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Цена</label>
-                                <input name="price" type="text" value="{{$option->price}}" class="form-control"
-                                       id="price">
                             </div>
                             <button type="submit" class="btn btn-primary">Редактировать</button>
                         </form>

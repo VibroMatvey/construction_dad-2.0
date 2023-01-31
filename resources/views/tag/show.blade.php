@@ -5,15 +5,15 @@
         <div class="container-fluid">
             <div class="row mb-2 d-flex justify-content-between">
                 <div class="">
-                    <h1 class="m-0">Опция</h1>
+                    <h1 class="m-0">Тэг</h1>
                 </div><!-- /.col -->
                 <div class="d-flex">
-                    <a href="{{route('options.edit', $option->id)}}">
+                    <a href="{{route('tag.edit', $tag->id)}}">
                         <button class="btn btn-primary">
                             <i class="fas fa-pen"></i>
                         </button>
                     </a>
-                    <form action="{{route('options.delete', $option->id)}}" method="POST" class="ml-2">
+                    <form action="{{route('tag.delete', $tag->id)}}" method="POST" class="ml-2">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">
@@ -34,14 +34,10 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
-                                    <th>Значение</th>
-                                    <th>Цена</th>
                                 </tr>
                                 <tr>
-                                    <td>{{ $option->id }}</td>
-                                    <td>{{ $option->title }}</td>
-                                    <td>{{ $option->value }}</td>
-                                    <td>{{ $option->price }}</td>
+                                    <td>{{ $tag->id }}</td>
+                                    <td>{{ $tag->title }}</td>
                                 </tr>
                             </tbody>
                         </table>
