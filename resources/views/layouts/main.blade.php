@@ -116,7 +116,7 @@
     </nav>
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="index3.html" class="brand-link">
+        <a href="{{route('main.index')}}" class="brand-link">
             <span class="brand-image ml-2" style="opacity: .8; font-size: 20px"><i style="font-size: 35px" class="fas fa-home"></i></span>
             <span class="brand-text font-weight-light">Строительный папа</span>
         </a>
@@ -127,7 +127,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{route('main.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-shopping-bag"></i>
                             <p>
                                 Заказы
@@ -136,20 +136,20 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('product.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-stream"></i>
+                            <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Товары
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('options.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>
-                                Параметры товаров
-                            </p>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="{{ route('options.index') }}" class="nav-link">--}}
+{{--                            <i class="nav-icon fas fa-th"></i>--}}
+{{--                            <p>--}}
+{{--                                Параметры товаров--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a href="{{ route('category.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-list-ul"></i>
@@ -168,9 +168,17 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('user.index') }}" class="nav-link">
-                            <i class="nav-icon far fa-address-card"></i>
+                            <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Пользователи
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('user.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-comment"></i>
+                            <p>
+                                Отзывы
                             </p>
                         </a>
                     </li>
