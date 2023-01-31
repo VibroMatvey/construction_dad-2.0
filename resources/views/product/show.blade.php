@@ -8,15 +8,17 @@
                     <h1 class="m-0">Товар</h1>
                 </div><!-- /.col -->
                 <div class="d-flex">
-                    <a href="{{route('product.edit', $user->id)}}">
+                    <a href="{{route('product.edit', $product->id)}}">
                         <button class="btn btn-primary">
+                            <span class="mr-2">Редактировать</span>
                             <i class="fas fa-pen"></i>
                         </button>
                     </a>
-                    <form action="{{route('product.delete', $user->id)}}" method="POST" class="ml-2">
+                    <form action="{{route('product.delete', $product->id)}}" method="POST" class="ml-2">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">
+                            <span class="mr-2">Удалить</span>
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
@@ -33,35 +35,7 @@
                             <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <td>{{ $user->id }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Фамилия</th>
-                                    <td>{{ $user->surname }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Имя</th>
-                                    <td>{{ $user->name }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Отчество</th>
-                                    <td>{{ $user->lastname }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Возраст</th>
-                                    <td>{{ $user->age }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Пол</th>
-                                    <td>{{ $user->gender }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Эл. почта</th>
-                                    <td>{{ $user->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Адрес</th>
-                                    <td>{{ $user->address }}</td>
+                                    <td>{{ $product->id }}</td>
                                 </tr>
                             </tbody>
                         </table>

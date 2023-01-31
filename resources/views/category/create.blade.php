@@ -26,8 +26,15 @@
                                 <label for="title">Наименование</label>
                                 <input name="title" type="text" class="form-control" id="title">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Добавить</button>
                         </form>
+                        @if ($errors->any())
+                            <ul class="list-group mt-3">
+                                @foreach ($errors->all() as $error)
+                                    <li class="list-group-item alert alert-danger">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>

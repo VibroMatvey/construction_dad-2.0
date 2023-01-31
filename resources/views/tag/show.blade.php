@@ -10,6 +10,7 @@
                 <div class="d-flex">
                     <a href="{{route('tag.edit', $tag->id)}}">
                         <button class="btn btn-primary">
+                            <span class="mr-2">Редактировать</span>
                             <i class="fas fa-pen"></i>
                         </button>
                     </a>
@@ -17,6 +18,7 @@
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">
+                            <span class="mr-2">Удалить</span>
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>

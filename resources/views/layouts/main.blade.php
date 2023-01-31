@@ -117,6 +117,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a href="index3.html" class="brand-link">
+            <span class="brand-image ml-2" style="opacity: .8; font-size: 20px"><i style="font-size: 35px" class="fas fa-home"></i></span>
             <span class="brand-text font-weight-light">Строительный папа</span>
         </a>
         <!-- Sidebar -->

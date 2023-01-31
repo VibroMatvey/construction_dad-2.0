@@ -9,7 +9,10 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <a href="{{ route('user.create') }}" class="float-right">
-                        <button class="btn btn-success"><i class="fas fa-plus"></i></button>
+                        <button class="btn btn-success">
+                            <span class="mr-2">Добавить</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -25,8 +28,8 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Имя</th>
                                     <th>Фамилия</th>
+                                    <th>Имя</th>
                                     <th>Отчество</th>
                                     <th>Возраст</th>
                                     <th>Пол</th>

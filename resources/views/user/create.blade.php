@@ -18,7 +18,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="card col-3 mx-auto mt-2">
+                <div class="card col-6 mx-auto mt-2">
                     <div class="card-body">
                         <form action="{{route('user.store')}}" method="POST">
                             @csrf
@@ -28,8 +28,14 @@
                                         id="surname">
                             </div>
                             <div class="form-group">
-                                <label for="name">Имя</label>
-                                <input value="{{ old('name') }}" name="name" type="text" class="form-control" id="name">
+                                <label class="d-flex align-items-center justify-content-between" for="name">Имя
+                                    @error('name')
+                                    <span class="badge badge-danger">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </label>
+                                <input value="{{ old('name') }}" name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name">
                             </div>
                             <div class="form-group">
                                 <label for="lastname">Отчество</label>
@@ -49,16 +55,28 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="email">Электронная почта</label>
-                                <input value="{{ old('email') }}" name="email" type="text" class="form-control" id="email">
+                                <label class="d-flex align-items-center justify-content-between" for="email">Электронная почта
+                                    @error('email')
+                                    <span class="badge badge-danger">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </label>
+                                <input value="{{ old('email') }}" autocomplete="off" name="email" type="text" class="form-control @error('email') is-invalid @enderror" id="email">
                             </div>
-                            <div class="form-group">
-                                <label for="password">Пароль</label>
-                                <input value="{{ old('password') }}" name="password" type="password" class="form-control" id="password">
+                            <div class="form-group" >
+                                <label class="d-flex align-items-center justify-content-between" for="password">Пароль
+                                    @error('password')
+                                    <span class="badge badge-danger">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </label>
+                                <input name="password" autocomplete="off" type="password" class="form-control @error('password') is-invalid @enderror" id="password">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Повторите пароль</label>
-                                <input value="{{ old('password') }}" name="password_confirmation" type="password" class="form-control" id="password_confirmation">
+                                <input name="password_confirmation" autocomplete="off" type="password" class="form-control @error('password') is-invalid @enderror" id="password_confirmation">
                             </div>
                             <div class="form-group">
                                 <label for="address">Адрес</label>

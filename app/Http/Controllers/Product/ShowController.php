@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ShowController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(Product $product)
     {
-        return view('user.show', compact('user'));
+        return view('product.show', compact('product'));
     }
 }

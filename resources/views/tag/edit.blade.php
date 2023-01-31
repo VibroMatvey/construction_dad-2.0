@@ -30,6 +30,13 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Редактировать</button>
                         </form>
+                        @if ($errors->any())
+                            <ul class="list-group mt-3">
+                                @foreach ($errors->all() as $error)
+                                    <li class="list-group-item alert alert-danger">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div><!-- /.container-fluid -->

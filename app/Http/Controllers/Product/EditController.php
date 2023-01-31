@@ -3,13 +3,18 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Tag;
+use Illuminate\Support\Facades\Storage;
 
 class EditController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(Product $product)
     {
-        return view('user.edit', compact('user'));
+        $tags = Tag::all();
+        $categories = Category::all();
+
+        return view('product.edit', compact('product', 'tags', 'categories'));
     }
 }
