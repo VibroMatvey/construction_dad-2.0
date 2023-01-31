@@ -142,6 +142,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('options.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Параметры товаров
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('category.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-list-ul"></i>
                             <p>
@@ -167,15 +175,11 @@
                     </li>
                 </ul>
             </nav>
-            <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
     </aside>
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @yield('content')
     </div>
-    <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-{{ now()->year }} <a href="{{ route('main.index') }}">Строительный папа</a>.</strong>
             Все права защищены.
@@ -183,15 +187,9 @@
                 <b>Version</b> 2.0.0
             </div>
         </footer>
-
-    <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
     </aside>
-    <!-- /.control-sidebar -->
 </div>
-<!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src=" {{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->

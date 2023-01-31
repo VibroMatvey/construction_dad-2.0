@@ -24,3 +24,13 @@ Route::group(['prefix' => 'categories'], function () {
     Route::patch('/{category}', \App\Http\Controllers\Category\UpdateController::class)->name('category.update');
     Route::delete('/{category}', \App\Http\Controllers\Category\DeleteController::class)->name('category.delete');
 });
+
+Route::group(['prefix' => 'options'], function () {
+    Route::get('/', \App\Http\Controllers\Options\IndexController::class)->name('options.index');
+    Route::get('/create', \App\Http\Controllers\Options\CreateController::class)->name('options.create');
+    Route::post('/', \App\Http\Controllers\Options\StoreController::class)->name('options.store');
+    Route::get('/{option}/edit', \App\Http\Controllers\Options\EditController::class)->name('options.edit');
+    Route::get('/{option}', \App\Http\Controllers\Options\ShowController::class)->name('options.show');
+    Route::patch('/{option}', \App\Http\Controllers\Options\UpdateController::class)->name('options.update');
+    Route::delete('/{option}', \App\Http\Controllers\Options\DeleteController::class)->name('options.delete');
+});
