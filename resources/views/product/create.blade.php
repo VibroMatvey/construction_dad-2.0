@@ -56,6 +56,7 @@
                                 <textarea value="{{ old('content') }}" name="content" type="text"
                                           class="form-control @error('content') is-invalid @enderror"
                                           id="content"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Формат: ширина - 200 см, вес - 100 кг</small>
                             </div>
                             <div class="form-group">
                                 <label class="d-flex align-items-center justify-content-between" for="price">Цена

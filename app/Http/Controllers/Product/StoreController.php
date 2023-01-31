@@ -14,10 +14,20 @@ class StoreController extends Controller
     {
         $data = $request->validated();
 
-        $data['preview_img'] = Storage::disk('public')->put('/images', $data['preview_img']);
         if(!$request->has('tags')) {
             $data['tags'] = [];
         }
+
+        $content = explode(',', trim($data['content']));
+
+        foreach ($content as $item) {
+            $item = explode('-', $item);
+            $content_data[] = $item;
+        }
+
+        $data['content'] = json_encode($content_data, JSON_UNESCAPED_UNICODE);
+
+        $data['preview_img'] = Storage::disk('public')->put('/images', $data['preview_img']);
         $tags = $data['tags'];
         unset($data['tags']);
 

@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="content">Характеристики</label>
-                                <input name="content" type="text" value="{{$product->content ?? old('content')}}"
+                                <input name="content" type="text" value="{{$content ?? old('content')}}"
                                        class="form-control"
                                        id="content">
                             </div>

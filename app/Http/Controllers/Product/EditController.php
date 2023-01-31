@@ -15,6 +15,17 @@ class EditController extends Controller
         $tags = Tag::all();
         $categories = Category::all();
 
-        return view('product.edit', compact('product', 'tags', 'categories'));
+        $content_data = json_decode($product['content']);
+        array_walk($content_data, function(&$value, $key) {
+            $value = "{$key} - {$value}";
+        });
+
+        foreach($content_data as $d) {
+            $array[]=$d;
+        }
+
+        $content = implode(', ', $array);
+
+        return view('product.edit', compact('product', 'tags', 'categories', 'content'));
     }
 }

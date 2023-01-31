@@ -42,8 +42,8 @@
                                         <tr>
                                             <td>{{ $product->id }}</td>
                                             <td><a href="{{route('user.show', $product->id)}}">{{ $product->title }}</a></td>
-                                            <td>{{ $product->description }}</td>
-                                            <td>{{ $product->content }}</td>
+                                            <td style="word-wrap: break-word !important; white-space: break-spaces !important; max-width: 150px">{{ $product->description }}</td>
+                                            <td class="content" data-value="{{ $product->content }}"></td>
                                             <td>{{ $product->count }}</td>
                                             <td>{{ $product->PublishedTitle }}</td>
                                             <td>{{ $product->category_id }}</td>
@@ -74,4 +74,24 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
+    <script>
+        console.log(document.querySelectorAll('tr > .content'))
+        document.querySelectorAll('tr > .content').forEach(contentBlock => {
+            const content = JSON.parse(contentBlock.getAttribute('data-value'))
+            const ul = document.createElement('ul')
+            ul.style.paddingLeft = '0px'
+            content.forEach(item => {
+                const li = document.createElement('li')
+                const label = document.createElement('span')
+                const value = document.createElement('span')
+                label.textContent = item[0]
+                value.textContent = item[1]
+                li.classList = 'd-flex align-items-center justify-content-between border-bottom'
+                li.append(label)
+                li.append(value)
+                ul.append(li)
+            })
+            contentBlock.append(ul)
+        })
+    </script>
 @endsection
