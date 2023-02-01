@@ -25,16 +25,6 @@ Route::group(['prefix' => 'categories'], function () {
     Route::delete('/{category}', \App\Http\Controllers\Category\DeleteController::class)->name('category.delete');
 });
 
-Route::group(['prefix' => 'options'], function () {
-    Route::get('/', \App\Http\Controllers\Options\IndexController::class)->name('options.index');
-    Route::get('/create', \App\Http\Controllers\Options\CreateController::class)->name('options.create');
-    Route::post('/', \App\Http\Controllers\Options\StoreController::class)->name('options.store');
-    Route::get('/{option}/edit', \App\Http\Controllers\Options\EditController::class)->name('options.edit');
-    Route::get('/{option}', \App\Http\Controllers\Options\ShowController::class)->name('options.show');
-    Route::patch('/{option}', \App\Http\Controllers\Options\UpdateController::class)->name('options.update');
-    Route::delete('/{option}', \App\Http\Controllers\Options\DeleteController::class)->name('options.delete');
-});
-
 Route::group(['prefix' => 'tag'], function () {
     Route::get('/', \App\Http\Controllers\Tag\IndexController::class)->name('tag.index');
     Route::get('/create', \App\Http\Controllers\Tag\CreateController::class)->name('tag.create');
@@ -63,4 +53,8 @@ Route::group(['prefix' => 'products'], function () {
     Route::get('/{product}', \App\Http\Controllers\Product\ShowController::class)->name('product.show');
     Route::patch('/{product}', \App\Http\Controllers\Product\UpdateController::class)->name('product.update');
     Route::delete('/{product}', \App\Http\Controllers\Product\DeleteController::class)->name('product.delete');
+});
+
+Route::group(['prefix' => 'images'], function () {
+    Route::delete('/{image}', \App\Http\Controllers\Image\DeleteController::class)->name('image.delete');
 });

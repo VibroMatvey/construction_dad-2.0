@@ -110,7 +110,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="d-flex align-items-center justify-content-between" for="exampleInputFile">Выберите
+                                <label class="d-flex align-items-center justify-content-between" for="exampleInputFile">Выберите превью
                                     изображение
                                     @error('preview_img')
                                     <span class="badge badge-danger">
@@ -124,6 +124,27 @@
                                                class="custom-file-input @error('preview_img') is-invalid @enderror"
                                                id="exampleInputFile">
                                         <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Загрузить</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="d-flex align-items-center justify-content-between" for="exampleInputFile">Выберите
+                                    изображения
+                                    @error('images')
+                                    <span class="badge badge-danger">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input name="images[]" type="file"
+                                               class="custom-file-input @error('preview_img') is-invalid @enderror"
+                                               id="exampleInputFile" multiple>
+                                        <label class="custom-file-label" for="exampleInputFile">Выберите файлы</label>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Загрузить</span>

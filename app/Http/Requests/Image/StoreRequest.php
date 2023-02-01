@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Options;
+namespace App\Http\Requests\Image;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,9 +24,8 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string',
-            'value' => 'required|string',
-            'price' => 'required|integer',
+            'product_id' => 'required|integer',
+            'image' => 'required|string'
         ];
     }
 }

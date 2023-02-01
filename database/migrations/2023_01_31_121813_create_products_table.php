@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->float('price');
             $table->string('preview_img');
-            $table->text('content');
+            $table->json('content');
             $table->text('description');
             $table->integer('count');
             $table->boolean('is_published')->default(true);

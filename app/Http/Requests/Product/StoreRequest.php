@@ -32,7 +32,8 @@ class StoreRequest extends FormRequest
             'count' => 'required',
             'is_published' => 'nullable',
             'category_id' => 'required',
-            'tags' => 'nullable|array'
+            'tags' => 'nullable|array',
+            'images' => 'nullable|array'
         ];
     }
 }

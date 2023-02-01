@@ -37,6 +37,48 @@
                                     <th>ID</th>
                                     <td>{{ $product->id }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Наименование</th>
+                                    <td>{{ $product->title }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Описание</th>
+                                    <td>{{ $product->description }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Характеристики</th>
+                                    <td>{{ $product->content }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Цена</th>
+                                    <td>{{ $product->price }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Кол-во</th>
+                                    <td>{{ $product->count }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Публикация</th>
+                                    <td>{{ $product->PublishedTitle }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Категория</th>
+                                    <td>{{ $product->category_id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Превью</th>
+                                    <td>
+                                        <img width="300px" src="{{ asset('storage/' . $product->preview_img) }}" alt="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Изображения</th>
+                                    <td>
+                                        @foreach($images as $image)
+                                            <img class="mt-4" width="300px" src="{{asset('storage/' . $image->image)}}" alt="">
+                                        @endforeach
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

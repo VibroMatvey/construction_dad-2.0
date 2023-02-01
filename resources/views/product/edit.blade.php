@@ -96,15 +96,32 @@
                                     <span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>
                                 </div>
                             </div>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="images[]" type="file"
+                                           class="custom-file-input @error('preview_img') is-invalid @enderror"
+                                           id="exampleInputFile" multiple>
+                                    <label class="custom-file-label" for="exampleInputFile">Выберите изображения</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Загрузить</span>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary">Редактировать</button>
                         </form>
-                        @if ($errors->any())
-                            <ul class="list-group mt-3">
-                                @foreach ($errors->all() as $error)
-                                    <li class="list-group-item alert alert-danger">{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        @foreach($images as $image)
+                            <div class="d-flex align-items-center justify-content-between">
+                                <img class="mt-4" style="width: 300px" src="{{asset('storage/' . $image->image)}}" alt="">
+                                <form action="{{route('image.delete', $image->id)}}" method="POST" class="ml-2">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">
+                                        <span class="mr-2">Удалить</span>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
