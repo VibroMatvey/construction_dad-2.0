@@ -23,4 +23,12 @@ class Product extends Model
     public function getPublishedTitleAttribute() {
         return self::getPublished()[$this->is_published];
     }
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
+    public function getImageUrlAttribute() {
+        return url('storage/' . $this->preview_img);
+    }
 }
