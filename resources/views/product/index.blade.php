@@ -29,10 +29,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
-                                    <th>Описание</th>
-                                    <th>Характеристики</th>
                                     <th>Кол-во</th>
-                                    <th>Опубликовано</th>
+                                    <th>Статус</th>
                                     <th>Категория</th>
                                     <th>Изображение</th>
                                 </tr>
@@ -42,11 +40,9 @@
                                         <tr>
                                             <td>{{ $product->id }}</td>
                                             <td><a href="{{route('product.show', $product->id)}}">{{ $product->title }}</a></td>
-                                            <td style="word-wrap: break-word !important; white-space: break-spaces !important; max-width: 150px">{{ $product->description }}</td>
-                                            <td class="content" data-value="{{ $product->content }}"></td>
                                             <td>{{ $product->count }}</td>
                                             <td>{{ $product->PublishedTitle }}</td>
-                                            <td>{{ $product->category_id }}</td>
+                                            <td>{{ $product->category->title }}</td>
                                             <td>
                                                 <img style="width: 100px" src="{{ asset('storage/' . $product->preview_img) }}" alt="">
                                             </td>
